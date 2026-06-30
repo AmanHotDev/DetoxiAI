@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 🎯 छोटा ब्राउज़र लोगो (Favicon) जो icons/logo.png से लोड होगा -->
+    <link rel="icon" type="image/png" href="icons/logo.png">
+    <title>DetoxiAI | Intelligent Pure Core</title>
+    <style>
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #ffffff; /* शुद्ध व्हाइट बैकग्राउंड */
+            color: #000000; /* शुद्ध ब्लैक टेक्स्ट */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* 📡 TOP BAR */
+        .header-bar {
+            width: 100%;
+            padding: 30px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-meta img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .brand-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* 🧠 THE QUESTION EATER: CSS ANIMATION ENGINE */
+        .stage-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+        }
+
+        .animation-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 300px;
+            height: 150px;
+        }
+
+        /* आपका कल्पित कस्टम लोगो पाथ */
+        .master-logo-asset {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            z-index: 10;
+            animation: mouthChomp 0.6s ease-in-out infinite alternate;
+        }
+
+        /* निगलने वाला क्वेश्चन मार्क */
+        .question-prey {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #000000; /* ब्लैक क्वेश्चन मार्क */
+            position: absolute;
+            right: 20px;
+            z-index: 5;
+            user-select: none;
+            opacity: 0;
+            animation: swallowQuestion 2.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
+        }
+
+        /* लोगो चॉम्पिंग मूवमेंट */
+        @keyframes mouthChomp {
+            0% { transform: scale(1) rotate(-5deg); }
+            100% { transform: scale(1.08) rotate(5deg); }
+        }
+
+        /* क्वेश्चन मार्क को निगलने का एनिमेटेड सफर */
+        @keyframes swallowQuestion {
+            0% {
+                transform: translateX(80px) scale(0.5);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+                transform: translateX(40px) scale(1);
+            }
+            70% {
+                transform: translateX(-50px) scale(0.8);
+                opacity: 0.5;
+            }
+            85%, 100% {
+                transform: translateX(-110px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .core-motto {
+            text-align: center;
+            max-width: 500px;
+            padding: 0 20px;
+        }
+
+        .core-motto h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .core-motto p {
+            font-size: 0.95rem;
+            color: #666666; /* सटल ग्रे थ्योरी टेक्स्ट */
+            line-height: 1.6;
+        }
+
+        /* ⚡ ENTER SYSTEM CTA BUTTON */
+        .cta-wrapper {
+            margin-top: 20px;
+        }
+
+        .btn-enter-core {
+            background: #000000; /* ब्लैक बटन */
+            color: #ffffff; /* व्हाइट टेक्स्ट */
+            border: none;
+            padding: 16px 40px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            display: inline-block;
+        }
+
+        .btn-enter-core:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            background: #222222;
+        }
+
+        footer {
+            padding: 30px;
+            color: #aaaaaa;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-bar">
+        <div class="brand-meta">
+            <img src="icons/logo.png" alt="Detoxi">
+            <span class="brand-title">DetoxiAI</span>
+        </div>
+    </header>
+
+    <main class="stage-area">
+        <!-- 🧠 ANIMATION ENGINE COMPONENT (The Question Eater) -->
+        <div class="animation-box">
+            <img src="icons/logo.png" class="master-logo-asset" alt="Core Node">
+            <div class="question-prey">?</div>
+        </div>
+
+        <div class="core-motto">
+            <h1>Pure Intelligence.</h1>
+            <p>A distraction-free core optimized to swallow complex problems, filter structural clutter, and stream instant code architectures.</p>
+        </div>
+
+        <div class="cta-wrapper">
+            <a href="login.html" class="btn-enter-core">Launch Core Engine →</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 DetoxiAI Systems. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
